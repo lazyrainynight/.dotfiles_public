@@ -1,0 +1,29 @@
+echo fetching MyCompares...
+cd ~/my/compares
+git fetch
+echo done
+echo
+
+echo fetching .dotfiles...
+cd ~/.dotfiles
+git fetch
+echo done
+echo
+
+echo fetching .dotfiles_public...
+cd ~/.dotfiles_public
+git fetch
+echo done
+echo
+
+echo fetching MyNote...
+cd ~/my/notes
+git fetch
+echo done
+echo
+
+echo fetching MyNoteForwork...
+cd ~/my/notes-for-work
+git fetch
+echo done
+echo

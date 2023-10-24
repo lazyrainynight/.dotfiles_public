@@ -1,0 +1,6 @@
+echo "------------"
+echo "Print My All"
+echo "------------"
+printpowershellversion
+printconnectionstrings
+echo ""

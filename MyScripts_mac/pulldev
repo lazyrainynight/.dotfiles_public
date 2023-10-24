@@ -1,0 +1,29 @@
+echo pulling MyCompares...
+cd ~/my/compares
+git pull
+echo done
+echo
+
+echo pulling .dotfiles...
+cd ~/.dotfiles
+git pull
+echo done
+echo
+
+echo pulling .dotfiles_public...
+cd ~/.dotfiles_public
+git pull
+echo done
+echo
+
+echo pulling MyNote...
+cd ~/my/notes
+git pull
+echo done
+echo
+
+echo pulling MyNoteForWork...
+cd ~/my/notes-for-work
+git pull
+echo done
+echo

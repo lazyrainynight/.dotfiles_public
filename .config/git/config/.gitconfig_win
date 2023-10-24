@@ -1,0 +1,72 @@
+[user]
+	name = {Full Name}
+	email = {email}
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[gc]
+	autoDetach = false
+
+[core]
+	autocrlf = true
+	longpaths = true
+
+[checkout]
+	defaultRemote = origin
+
+[branch "master"]
+	mergeoptions = --ff-only
+
+[branch "main"]
+	mergeoptions = --ff-only
+
+[diff]
+	tool = bc4
+[difftool]
+	prompt = true
+[difftool "bc4"]
+	cmd = \"C:\\Program Files\\Beyond Compare 4\\BComp.exe\" \"$LOCAL\" \"$REMOTE\"
+	keepBackup = false
+
+[merge]
+	tool = bc4
+[mergetool]
+	prompt = true
+[mergetool "bc4"]
+	cmd = \"C:\\Program Files\\Beyond Compare 4\\BComp.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+	keepBackup = false
+	trustExitCode = true
+
+#[log]
+#	date = format:%y-%m/%d %H:%m
+#[format]
+#	pretty = format:%C(green)%ad %C(yellow)%h %C(cyan)%an %C(white)%s %C(red)%d
+
+[alias]
+	lg = log --graph --pretty='format:%C(green)%ad %C(yellow)%h %C(cyan)%an %C(white)%s %C(red)%d' --date='format:%y-%m/%d %H:%m'
+	st = status
+	co = checkout
+	cm = commit
+	cmm = commit -m
+	cane = commit --amend --no-edit
+	br = branch
+	rb = rebase
+	rsh = reset --hard
+	rst = restore
+	rmt = remote -v
+	pushf = push --force-with-lease
+	pushff = push -f
+	pushnov = push --no-verify
+	pushfnov = push -f --no-verify
+	pushnovf = push -f --no-verify
+	nov = --no-verify
+	stashunt = stash --include-untracked
+	stashall = stash --include-untracked
+	sw = switch
+	dfs = diff --staged
+	cleanup = !git stash --include-untracked && git stash drop
+	nah = !git reset --hard && git clean -df

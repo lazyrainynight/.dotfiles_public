@@ -1,0 +1,5 @@
+echo "    PrintConnectionStrings"
+echo "        {server resource name}"
+echo "            ADO.NET: {connection string for ado.net}"
+echo "            JDBC:    {connection string for jdbc}"
+echo ""

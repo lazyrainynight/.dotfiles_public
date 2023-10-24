@@ -1,0 +1,63 @@
+[user]
+	name = {Full Name}
+	email = {email}
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[gc]
+	autoDetach = false
+
+[core]
+	autocrlf = input
+	longpaths = true
+
+[checkout]
+	defaultRemote = origin
+
+[branch "master"]
+	mergeoptions = --ff-only
+
+[branch "main"]
+	mergeoptions = --ff-only
+
+[diff]
+	tool = bc
+
+[merge]
+	tool = bc
+[mergetool "bc"]
+	trustExitCode = true
+
+#[log]
+#	date = format:%y-%m/%d %H:%m
+#[format]
+#	pretty = format:%C(green)%ad %C(yellow)%h %C(cyan)%an %C(white)%s %C(red)%d
+
+[alias]
+	lg = log --graph --pretty='format:%C(green)%ad %C(yellow)%h %C(cyan)%an %C(white)%s %C(red)%d' --date='format:%y-%m/%d %H:%m'
+	st = status
+	co = checkout
+	cm = commit
+	cmm = commit -m
+	cane = commit --amend --no-edit
+	br = branch
+	rb = rebase
+	rsh = reset --hard
+	rst = restore
+	rmt = remote -v
+	pushf = push --force-with-lease
+	pushff = push -f
+	pushnov = push --no-verify
+	pushfnov = push -f --no-verify
+	pushnovf = push -f --no-verify
+	nov = --no-verify
+	stashunt = stash --include-untracked
+	stashall = stash --include-untracked
+	sw = switch
+	dfs = diff --staged
+	cleanup = !git stash --include-untracked && git stash drop
+	nah = !git reset --hard && git clean -df
