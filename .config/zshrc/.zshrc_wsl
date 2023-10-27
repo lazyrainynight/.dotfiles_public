@@ -105,6 +105,9 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/.config/OhMyPosh/mytheme.linux.omp.json)"
 
+# Add .NET Core SDK tools
+export PATH="$PATH:~/.dotnet/tools"
+
 LS_COLORS="ow=01;36;40" && export LS_COLORS
 
 alias uu="sudo apt update; sudo apt upgrade -y; sudo apt autoremove"
