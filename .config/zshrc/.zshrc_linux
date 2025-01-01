@@ -112,7 +112,7 @@ export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/pla
 
 export HOMEBREW_NO_ANALYTICS=1
 
-eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/.config/OhMyPosh/mytheme.linux.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/.config/OhMyPosh/mytheme.linux.omp.json)"
 
 alias qq="exit"
 alias cls="clear"
@@ -147,3 +147,15 @@ alias nvim.="nvim ."
 alias nvimzshrc="nvim ~/.zshrc"
 alias nvimgitconfig="nvim ~/.gitconfig"
 alias g="git"
+alias gsync="git pull --rebase && git push"
+alias brewup="brew update && brew upgrade"
+alias aptup="sudo apt update; sudo apt upgrade -y; sudo apt autoremove"
+alias snapup="sudo snap refresh"
+alias allup="aptup; brewup; snapup"
+alias uu="allup"
+alias dkmakemynetwork="dk network create my-network"
+alias dkrunsqlserver="dk run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=p@ssw0rD' -u 0:0 -p 1433:1433 -v sqlserver-volume:/var/opt/mssql -d --name sqlserver mcr.microsoft.com/mssql/server:2022-latest"
+alias dkrunsqlserver_old="dk run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=p@ssw0rD' -u 0:0 -p 1433:1433 -v ~/my/sqlserver-volume:/var/opt/mssql/data -v ~/my/sqlserver-log:/var/opt/mssql/log -v ~/my/sqlserver-secrets:/var/opt/mssql/secrets -v ~/my/sqlserver-backup:/var/opt/mssql/backup -d --name sqlserver mcr.microsoft.com/mssql/server:2022-latest"
+alias dkrunpostgres="dk run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=p@ssw0rD -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -d postgres:latest"
+alias dkrunpostgres_old="dk run --name postgres --net my-network -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=p@ssw0rD -p 5432:5432 -v ~/my/postgres-volume/:/var/lib/postgresql/data -d postgres:latest"
+alias dkusermod="sudo usermod -aG docker $USER"
